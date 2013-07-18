@@ -1,4 +1,4 @@
-# basketball-reference
+# scrape-a-ball
 
 Scrapes basketball-reference.com all the time, extracts information to a database, provides REST API.
 
@@ -15,6 +15,11 @@ Scrapes basketball-reference.com all the time, extracts information to a databas
 2. Develop database architecture for this structure
 3. Determine which pages actually have to be scraped and which information may be calculated from those. This is to avoid possible inconsistencies.
 4. Start coding
+
+# Stuff to think about
+
+* Really necessary to fetch only players, teams and box scores and calculate from there? Disadvantages: Write-heavy, complicated (think of Opponents DefRtg per Season or individual advanced career stats). Advantages: Feels right. Possible alternatives: Don't use relational DB and instead document store like Mongo. Just dump the extracted information.
+* How to model awards? There are individual awards once per season (COTY, ROTY, MIP, Season MVP, Finals MVP) or multiple times (Player of the week/month), sometimes per conference (potw east/west). Should championships count as awards?
 
 # Structure of BBall-Ref
 
