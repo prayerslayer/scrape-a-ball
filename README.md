@@ -5,18 +5,15 @@ Scrapes basketball-reference.com all the time, extracts information to a databas
 # TODO
 
 1. Look at structure of pages:
-* Leagues (NBA, ABA at least)
-* Schedule
-* Standings (Division & Conference)
-* Box Scores
-* Draft
-* Coaches
-* Awards
-
+  * Leagues (NBA, ABA at least)
+  * Schedule
+  * Standings (Division & Conference)
+  * Box Scores
+  * Draft
+  * Coaches
+  * Awards
 2. Develop database architecture for this structure
-
 3. Determine which pages actually have to be scraped and which information may be calculated from those. This is to avoid possible inconsistencies.
-
 4. Start coding
 
 # Structure of BBall-Ref
