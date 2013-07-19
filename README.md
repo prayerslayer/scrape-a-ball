@@ -2,6 +2,33 @@
 
 Scrapes basketball-reference.com all the time, extracts information to a database, provides REST API.
 
+# Desired API format in v0.1
+
+Not included in first version: Coaches, Drafts, Seasons, Playoffs, Awards.
+
+## Box Scores
+
+``/game/:away/:home/`` with additional GET parameter ``date`` gives general information of the game ``:away``-``:home`` on ``date`` or a 404 error code if such a game does not exist. Information: refereee, attendance, arena, what not.
+``/game/:away/:home/scores/`` yields the box score.
+
+## Player
+
+``/player/:id/`` gives general information to player. Height, wingspan, birth date and so on.
+``/player/:id/stats/:type[/:season]/`` displays stats of player. E.g. Career totals or Per Game Playoffs.
+``/player/:id/teams[/:season]/`` displays which teams he played for including start and end date.
+``/player/:id/awards[/:season]/`` self explanatory
+``/player/:id/salaries[/:season]/`` too
+``/player/:id/similarity/`` yields similarity scores to other players.
+
+## Team
+
+``/team/:id/`` displays general information about the team. Current name, arena and so on.
+``/team/:id/history/`` lists location or name changes
+``/team/:id/stats/:type[/:season]/`` give information about different stats
+``/team/:id/roster[/:season]/`` yields info about roster
+``/team/:id/coach[/:season]/``
+``/team/:id/staff[/:season]/``
+
 # TODO
 
 1. Look at structure of pages:
@@ -18,7 +45,10 @@ Scrapes basketball-reference.com all the time, extracts information to a databas
 
 # Stuff to think about
 
-* Really necessary to fetch only players, teams and box scores and calculate from there? Disadvantages: Write-heavy, complicated (think of Opponents DefRtg per Season or individual advanced career stats). Advantages: Feels right. Possible alternatives: Don't use relational DB and instead document store like Mongo. Just dump the extracted information.
+* Really necessary to fetch only players, teams and box scores and calculate from there? 
+*	Disadvantages: Write-heavy, complicated (think of Opponents DefRtg per Season or individual advanced career stats)
+*	Advantages: Feels right, easily provide different API format or calculate own stats.
+* Possible alternatives: Don't use relational DB and instead document store like Mongo. Just dump the extracted information there. API format is largely identical to content of a bball reference page.
 * How to model awards? There are individual awards once per season (COTY, ROTY, MIP, Season MVP, Finals MVP) or multiple times (Player of the week/month), sometimes per conference (potw east/west). Should championships count as awards?
 
 # Structure of BBall-Ref
