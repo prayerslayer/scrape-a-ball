@@ -1,0 +1,10 @@
+{
+  "name": "scrape-a-ball",
+  "description": "Scrapes the basketball reference for fun and profit.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "underscore": "~1.5.1"
+  }
+}

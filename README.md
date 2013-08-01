@@ -2,6 +2,10 @@
 
 Scrapes basketball-reference.com all the time, extracts information to a database, provides REST API.
 
+# TOODO
+
+* Where is check for valid year best suited? Not possible as middleware because there aren't any req.params yet.
+
 # Desired API format in v0.1
 
 Not included in first version: Coaches, Drafts, Seasons, Playoffs, Awards.
